@@ -20,9 +20,9 @@ namespace _455_LDAP_Project
             }
         }
 
-        public bool CreateAccount(String firstName, String lastName, String password, String phoneNum, String username)
+        public String CreateAccount(String firstName, String lastName, String password, String phoneNum, String username)
         {
-            bool success = true;
+            String error = "";
 
             try
             {
@@ -31,7 +31,7 @@ namespace _455_LDAP_Project
                     using (var up = new UserPrincipal(pc))
                     {
                         up.SamAccountName = firstName[0] + lastName; // Username
-                        up.EmailAddress = username + "@security.edu"; // Email
+                        up.EmailAddress = firstName[0] + lastName + "@security.edu"; // Email
                         up.SetPassword(password); // Password
                         up.Surname = firstName; //firstname
                         up.Name = firstName + " " + lastName; //full name
@@ -43,13 +43,20 @@ namespace _455_LDAP_Project
                     }
                 }
             }
-
+            catch(System.DirectoryServices.AccountManagement.PasswordException pwe)
+            {
+                error = "Password needs special characters. !@#$%^&*";
+            }
+            catch(System.DirectoryServices.AccountManagement.PrincipalExistsException aee)
+            {
+                error = "Account already exists.";
+            }
             catch (Exception e)
             {
-                success = false;
+                error = e.ToString();
             }
 
-            return success;
+            return error;
         }
     }
 }

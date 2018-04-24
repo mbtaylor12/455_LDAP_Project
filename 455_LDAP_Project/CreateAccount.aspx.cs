@@ -17,15 +17,15 @@ namespace _455_LDAP_Project
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
             ActiveDirectory ad = new ActiveDirectory();
-            Boolean success = ad.CreateAccount(firstname.Text, lastname.Text, password.Text, phone.Text, output.Text);
+            String errorMessage = ad.CreateAccount(firstname.Text, lastname.Text, password.Text, phone.Text, output.Text);
 
-            if(success)
+            if(errorMessage.Equals(""))
             {
                 Response.Redirect("Login.aspx");
             }
             else
             {
-                error.Text = "An error occurred while creating your account.";
+                error.Text = errorMessage;
             }
         }
     }
