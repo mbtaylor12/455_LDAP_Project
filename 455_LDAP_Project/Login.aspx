@@ -104,24 +104,25 @@ input::-webkit-input-placeholder {
 	            </div> 
 				<div class="main-login main-center">
 					<form class="form-horizontal" id="form2" runat="server" method="post" action="#">
+                          <asp:Label ID="error" runat="server" ForeColor="#FF3300"></asp:Label>
 						 <h2 class="title" >Login</h2>
 						<div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">Your Username: </label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+                                      <asp:TextBox ID="username" runat="server" class="form-control" name="username"  placeholder="Enter your Username"></asp:TextBox>
 								</div>
 							</div>
 						</div>
-
+                        
 						
 						<div class="form-group">
 							<label for="password" class="cols-sm-2 control-label">Password: </label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                                    <asp:TextBox ID="password" runat="server" class="form-control" name="password"  placeholder="Enter your Password"></asp:TextBox>
 								</div>
 							</div>
 						</div>
