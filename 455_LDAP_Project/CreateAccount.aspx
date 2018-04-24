@@ -113,7 +113,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                     <asp:TextBox ID="firstname" lass="form-control" name="firstname" placeholder="Enter your Firstname" runat="server"></asp:TextBox>
+                                     <asp:TextBox ID="firstname" class="form-control" name="firstname" placeholder="Enter your Firstname" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
@@ -123,7 +123,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									  <asp:TextBox ID="lastname" lass="form-control" name="lastname" placeholder="Enter your Lastname" runat="server"></asp:TextBox>
+									  <asp:TextBox ID="lastname" class="form-control" name="lastname" placeholder="Enter your Lastname" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
@@ -141,7 +141,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									  <asp:TextBox ID="phone" lass="form-control" name="phone" placeholder="Enter your Phone Number" runat="server"></asp:TextBox>
+									  <asp:TextBox ID="phone" class="form-control" name="phone" placeholder="Enter your Phone Number" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
@@ -150,7 +150,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									  <asp:TextBox ID="password" lass="form-control" name="password" runat="server"></asp:TextBox>
+									  <asp:TextBox ID="password" class="form-control" name="password" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
