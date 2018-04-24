@@ -91,6 +91,7 @@ input::-webkit-input-placeholder {
 
         </style>
         <script>
+            
 
         </script>
 		<title>Create Account</title>
@@ -151,7 +152,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									  <asp:TextBox ID="password" class="form-control" name="password" runat="server"></asp:TextBox>
+									  <asp:TextBox ID="password" class="form-control" name="password" runat="server" placeholder="Enter your Password"></asp:TextBox>
 								</div>
 							</div>
 						</div>
