@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.DirectoryServices.AccountManagement;
 
 namespace _455_LDAP_Project
 {
@@ -11,9 +12,7 @@ namespace _455_LDAP_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Server sv = new Server();
 
-            String serverIP = sv.getIP();
         }
     }
 }
