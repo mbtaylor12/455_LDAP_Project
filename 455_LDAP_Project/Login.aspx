@@ -128,10 +128,10 @@ input::-webkit-input-placeholder {
 
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="button" runat="server" onServerClick="btnLogin_Click" class="btn btn-primary btn-lg btn-block login-button">Login</button>
 						</div>
 						<div class="login-register">
-				            <a href="CreateAccount.aspx">Login</a>
+				            <a href="CreateAccount.aspx">Create Account</a>
 				         </div>
 					</form>
 				</div>

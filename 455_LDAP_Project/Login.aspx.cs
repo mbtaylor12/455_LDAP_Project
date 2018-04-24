@@ -14,5 +14,12 @@ namespace _455_LDAP_Project
         {
 
         }
+    protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            ActiveDirectory ad = new ActiveDirectory();
+            Boolean success = ad.ValidateCredentials("mtaylor131", "security1#");
+            System.Diagnostics.Debug.WriteLine(success);
+
+        }
     }
 }
