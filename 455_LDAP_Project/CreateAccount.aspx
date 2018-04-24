@@ -3,17 +3,7 @@
 <!------ Create Account code for layout is used from this source: https://bootsnipp.com/snippets/featured/register-page ---------->
 <!DOCTYPE html>
 <html lang="en">
-    <head runat="server"> 
-       
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-
-		<!-- Website CSS style -->
-		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-
-		
+    <head runat="server"> 		
 		<!-- Google Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
@@ -88,7 +78,6 @@ input::-webkit-input-placeholder {
 	font-size: 11px;
 	text-align: center;
 }
-
         </style>
         <script>
             function createUsername()
@@ -101,6 +90,27 @@ input::-webkit-input-placeholder {
                 document.getElementById('<%= output.ClientID %>').innerHTML = username;
                 document.getElementById('<%= output.ClientID %>').value = username;
             }
+  function passwordMatchCheck()
+       {
+    //Store the password fields
+    var confirm_password = document.getElementById('confirm');
+	var password = document.getElementById('<%= password.ClientID %>');
+    //output message 
+    var output = document.getElementById('<%= error.ClientID %>');
+    //Set the colors 
+    var noMatch = "#FA8072";
+	var Match = "#66CDAA";
+    //Compare the values in the password field 
+    if(password.value == confirm_password.value){
+        confirm_password.style.backgroundColor = Match;
+        output.style.color = Match;
+        output.innerHTML = "Passwords Match.";
+    }else{
+        confirm_password.style.backgroundColor = noMatch;
+        output.style.color = noMatch;
+        output.innerHTML = "Passwords Do Not Match.";
+       }
+    }  
         </script>
 		<title>Create Account</title>
 	</head>
@@ -117,7 +127,8 @@ input::-webkit-input-placeholder {
 				<div class="main-login main-center">
 					<form class="form-horizontal" id="form1" runat="server" method="post" action="#">
 						 <h2 class="title" >Create Account</h2>
-                         <asp:Label ID="error" runat="server" ForeColor="#FF3300"></asp:Label>
+                         <asp:Label id="error" runat="server" ForeColor="#FF3300"></asp:Label>
+                        <br /> 
 						<div class="form-group">
 							<label for="firstname" class="cols-sm-2 control-label">Your First Name: </label>
 							<div class="cols-sm-10">
@@ -160,7 +171,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									  <asp:TextBox ID="password" class="form-control" placeholder="Enter your Password" name="password" runat="server"></asp:TextBox>
+									  <asp:TextBox type="password" ID="password" class="form-control" onchange="passwordMatchCheck()" placeholder="Enter your Password" name="password" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
@@ -170,7 +181,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="confirm" id="confirm"  onkeyup="passwordMatchCheck()"  placeholder="Confirm your Password"/>
 								</div>
 							</div>
 						</div>
@@ -186,6 +197,6 @@ input::-webkit-input-placeholder {
 			</div>
 		</div>
 
-		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+		
 	</body>
 </html>
