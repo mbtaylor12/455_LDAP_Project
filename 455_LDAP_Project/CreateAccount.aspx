@@ -111,6 +111,9 @@ input::-webkit-input-placeholder {
         output.innerHTML = "Passwords Do Not Match.";
        }
     }  
+   /* Create Account code is used from this source: https://bootsnipp.com/snippets/featured/register-page 
+    * that I modified to fit our site
+    /*
         </script>
 		<title>Create Account</title>
 	</head>

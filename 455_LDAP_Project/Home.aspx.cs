@@ -11,8 +11,24 @@ namespace _455_LDAP_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String username = Request.Cookies["userName"].Value;
-            welcomeback.Text = "Welcome Back " + username;
+           
+                if (Request.Cookies["userName"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    String username = Request.Cookies["userName"].Value;
+                    welcomeback.Text = "Welcome Back " + username;
+                }
+            
+          
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            Response.Cookies["userName"].Expires = DateTime.Now.AddDays(-1d);
+            Response.Redirect("Login.aspx");
         }
     }
 }

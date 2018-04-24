@@ -1,19 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="_455_LDAP_Project.Login" %>
 
-<!------ Login code for layout is used from this source: https://bootsnipp.com/snippets/featured/register-page ---------->
+<!------ Login code is used from this source: https://bootsnipp.com/snippets/featured/register-page ---------->
 <!DOCTYPE html>
 <html lang="en">
-    <head runat="server"> 
-       
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-
-		<!-- Website CSS style -->
-		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-
-		
+    <head runat="server">        
 		<!-- Google Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
@@ -62,7 +52,6 @@ input::-webkit-input-placeholder {
 
 .main-login{
  	background-color: #fff;
-    /* shadows and rounded borders */
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -91,7 +80,9 @@ input::-webkit-input-placeholder {
 
         </style>
 		<title>Login Page</title>
+
 	</head>
+   
 	<body>
 		<div class="container">
 			<div class="row main">
@@ -138,7 +129,5 @@ input::-webkit-input-placeholder {
 				</div>
 			</div>
 		</div>
-
-		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 	</body>
 </html>
