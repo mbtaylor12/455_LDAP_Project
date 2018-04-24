@@ -30,7 +30,7 @@ namespace _455_LDAP_Project
                 {
                     using (var up = new UserPrincipal(pc))
                     {
-                        up.SamAccountName = username; // Username
+                        up.SamAccountName = firstName[0] + lastName; // Username
                         up.EmailAddress = username + "@security.edu"; // Email
                         up.SetPassword(password); // Password
                         up.Surname = firstName; //firstname
@@ -43,7 +43,8 @@ namespace _455_LDAP_Project
                     }
                 }
             }
-            catch(Exception e)
+
+            catch (Exception e)
             {
                 success = false;
             }

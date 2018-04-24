@@ -91,8 +91,18 @@ input::-webkit-input-placeholder {
 
         </style>
         <script>
-            
+            function createUsername()
+            {
+                var firstnametext = document.getElementById("<%= firstname.ClientID %>").value;
+                var lastnametext = document.getElementById("<%= lastname.ClientID %>").value;
 
+                alert(firstnametext);
+
+                var username = firstnametext.charAt(0) + lastnametext;
+
+                document.getElementById('<%= output.ClientID %>').innerHTML = username;
+                document.getElementById('<%= output.ClientID %>').value = username;
+            }
         </script>
 		<title>Create Account</title>
 	</head>
@@ -152,7 +162,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									  <asp:TextBox ID="password" class="form-control" name="password" runat="server" placeholder="Enter your Password"></asp:TextBox>
+									  <asp:TextBox ID="password" class="form-control" name="password" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
