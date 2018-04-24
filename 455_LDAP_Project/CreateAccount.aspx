@@ -90,7 +90,10 @@ input::-webkit-input-placeholder {
 }
 
         </style>
-		<title>Admin</title>
+        <script>
+
+        </script>
+		<title>Create Account</title>
 	</head>
 	<body>
 		<div class="container">
@@ -106,21 +109,21 @@ input::-webkit-input-placeholder {
 					<form class="form-horizontal" id="form1" runat="server" method="post" action="#">
 						 <h2 class="title" >Create Account</h2>
 						<div class="form-group">
-							<label for="firstaname" class="cols-sm-2 control-label">Your First Name: </label>
+							<label for="firstname" class="cols-sm-2 control-label">Your First Name: </label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="firstname" id="firstname"  placeholder="Enter your First Name"/>
+                                     <asp:TextBox ID="firstname" lass="form-control" name="firstname" placeholder="Enter your Firstname" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="lastname" class="cols-sm-2 control-label">Your Last Name:</label>
+							<label for="lastname" class="cols-sm-2 control-label">Your Lastname:</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="lastname" id="lastname"  placeholder="Enter your Last Name"/>
+									  <asp:TextBox ID="lastname" lass="form-control" name="lastname" placeholder="Enter your Lastname" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
@@ -129,16 +132,16 @@ input::-webkit-input-placeholder {
 							<label for="username" class="cols-sm-2 control-label"> Your Username is: </label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<label for="usernameOutput" class="cols-sm-2 control-label"> </label>
+								<asp:Label ID="output" runat="server"  class="cols-sm-2 control-label" Text=""></asp:Label>
 								</div>
 							</div>
 						</div>
                         <div class="form-group">
-							<label for="phone" class="cols-sm-2 control-label">Your Telephone Number:</label>
+							<label for="phone" class="cols-sm-2 control-label">Your Phone Number:</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="phone" id="phone">
+									  <asp:TextBox ID="phone" lass="form-control" name="phone" placeholder="Enter your Phone Number" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
@@ -147,7 +150,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									  <asp:TextBox ID="password" lass="form-control" name="password" runat="server"></asp:TextBox>
 								</div>
 							</div>
 						</div>
