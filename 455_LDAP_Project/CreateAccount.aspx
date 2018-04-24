@@ -108,6 +108,7 @@ input::-webkit-input-placeholder {
 				<div class="main-login main-center">
 					<form class="form-horizontal" id="form1" runat="server" method="post" action="#">
 						 <h2 class="title" >Create Account</h2>
+                         <asp:Label ID="error" runat="server" ForeColor="#FF3300"></asp:Label>
 						<div class="form-group">
 							<label for="firstname" class="cols-sm-2 control-label">Your First Name: </label>
 							<div class="cols-sm-10">
