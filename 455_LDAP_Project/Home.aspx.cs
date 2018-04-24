@@ -11,7 +11,8 @@ namespace _455_LDAP_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            String username = Request.Cookies["userName"].Value;
+            welcomeback.Text = "Welcome Back " + username;
         }
     }
 }

@@ -21,6 +21,14 @@ namespace _455_LDAP_Project
             System.Diagnostics.Debug.WriteLine(success);
             if (success)
             {
+                Response.Cookies["userName"].Value = username.Text;
+                Response.Cookies["userName"].Expires = DateTime.Now.AddDays(1);
+
+                HttpCookie logincookie = new HttpCookie("logincookie");
+                logincookie.Value = DateTime.Now.ToString();
+                logincookie.Expires = DateTime.Now.AddDays(1);
+                Response.Cookies.Add(logincookie);
+
                 Response.Redirect("Home.aspx"); 
             }
             else
