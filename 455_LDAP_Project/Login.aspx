@@ -122,7 +122,7 @@ input::-webkit-input-placeholder {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <asp:TextBox ID="password" runat="server" class="form-control" name="password"  placeholder="Enter your Password"></asp:TextBox>
+                                    <asp:TextBox  ID="password" runat="server" class="form-control" name="password"  placeholder="Enter your Password"></asp:TextBox>
 								</div>
 							</div>
 						</div>
