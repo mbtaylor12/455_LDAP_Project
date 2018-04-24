@@ -91,7 +91,18 @@ input::-webkit-input-placeholder {
 
         </style>
         <script>
+            function createUsername()
+            {
+                var firstnametext = document.getElementById("<%= firstname.ClientID %>").value;
+                var lastnametext = document.getElementById("<%= lastname.ClientID %>").value;
 
+                alert(firstnametext);
+
+                var username = firstnametext.charAt(0) + lastnametext;
+
+                document.getElementById('<%= output.ClientID %>').innerHTML = username;
+                document.getElementById('<%= output.ClientID %>').value = username;
+            }
         </script>
 		<title>Create Account</title>
 	</head>
