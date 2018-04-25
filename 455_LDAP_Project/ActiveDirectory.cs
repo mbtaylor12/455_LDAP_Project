@@ -75,7 +75,16 @@ namespace _455_LDAP_Project
             else if (infoType.Equals("UserName"))
                 return user.SamAccountName;
             else if (infoType.Equals("LastBadLogin"))
-                return user.LastBadPasswordAttempt.Value.AddHours(-7).ToString();
+            {
+                if (user.LastBadPasswordAttempt == null)
+                {
+                    return "No bad Logins.";
+                }
+                else
+                {
+                    return user.LastBadPasswordAttempt.Value.AddHours(-7).ToString();
+                }
+            }
             else if (infoType.Equals("LastPasswordReset"))
                 return user.LastPasswordSet.Value.AddHours(-7).ToString();
             else

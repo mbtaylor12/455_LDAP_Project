@@ -21,14 +21,16 @@ namespace _455_LDAP_Project
                     String username = Request.Cookies["userName"].Value;
                     welcomeback.Text = "Welcome Back " + username;
                     ActiveDirectory ad = new ActiveDirectory();
-
-                /*System.Diagnostics.Debug.WriteLine(ad.getUserInfo(username, "FirstName"));
-                System.Diagnostics.Debug.WriteLine(ad.getUserInfo(username, "LastName"));
-                System.Diagnostics.Debug.WriteLine(ad.getUserInfo(username, "UserName"));
-                System.Diagnostics.Debug.WriteLine(ad.getUserInfo(username, "Phone"));
-                System.Diagnostics.Debug.WriteLine(ad.getUserInfo(username, "Email"));
-                System.Diagnostics.Debug.WriteLine(ad.getUserInfo(username, "LastBadLogin"));
-                System.Diagnostics.Debug.WriteLine(ad.getUserInfo(username, "LastPasswordReset"));*/
+                    userName.Text = ad.getUserInfo(username, "UserName");
+                    firstname.Text = ad.getUserInfo(username, "FirstName");
+                    lastname.Text = ad.getUserInfo(username, "LastName");
+                    phone.Text = ad.getUserInfo(username, "Phone");
+                    email.Text = ad.getUserInfo(username, "Email");
+                if (ad.getUserInfo(username, "LastBadLogin") != null)
+                {
+                    badLogin.Text = ad.getUserInfo(username, "LastBadLogin");
+                    passwordReset.Text = ad.getUserInfo(username, "LastPasswordReset");
+                }
             }
 
 
@@ -38,6 +40,22 @@ namespace _455_LDAP_Project
         {
             Response.Cookies["userName"].Expires = DateTime.Now.AddDays(-1d);
             Response.Redirect("Login.aspx");
+        }
+
+        protected void resetBtn_Click(object sender, EventArgs e)
+        {
+            ActiveDirectory ad = new ActiveDirectory();
+            var errorMsg = ad.resetPassword(Request.Cookies["userName"].Value, pwdRest.Text);
+            if (errorMsg.Equals(""))
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                error.Text = errorMsg;
+                pwdRest.Text = "";
+            }
+
         }
     }
 }

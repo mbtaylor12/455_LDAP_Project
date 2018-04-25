@@ -113,7 +113,7 @@ input::-webkit-input-placeholder {
     }  
    /* Create Account code is used from this source: https://bootsnipp.com/snippets/featured/register-page 
     * that I modified to fit our site
-    /*
+    */
         </script>
 		<title>Create Account</title>
 	</head>
