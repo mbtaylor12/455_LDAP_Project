@@ -93,6 +93,7 @@ namespace _455_LDAP_Project
             try
             {
                 user.SetPassword(password);
+                user.Save();
             }
             catch (System.DirectoryServices.AccountManagement.PasswordException pwe)
             {
