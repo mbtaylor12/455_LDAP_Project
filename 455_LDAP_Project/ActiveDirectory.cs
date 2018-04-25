@@ -58,5 +58,52 @@ namespace _455_LDAP_Project
 
             return error;
         }
+
+        public String getUserInfo(String username, String infoType)
+        {
+            PrincipalContext context = new PrincipalContext(ContextType.Domain, sv.getIP(), sv.getGenericUsername(), sv.getGenericPassword());
+            UserPrincipal user = UserPrincipal.FindByIdentity(context, username);
+
+            if (infoType.Equals("FirstName"))
+                return user.Surname;
+            else if (infoType.Equals("LastName"))
+                return user.GivenName;
+            else if (infoType.Equals("Email"))
+                return user.EmailAddress;
+            else if (infoType.Equals("Phone"))
+                return user.VoiceTelephoneNumber;
+            else if (infoType.Equals("UserName"))
+                return user.SamAccountName;
+            else if (infoType.Equals("LastBadLogin"))
+                return user.LastBadPasswordAttempt.Value.AddHours(-7).ToString();
+            else if (infoType.Equals("LastPasswordReset"))
+                return user.LastPasswordSet.Value.AddHours(-7).ToString();
+            else
+                return "Invalid Info Type.";
+    
+        }
+
+        public String resetPassword(String username, String password)
+        {
+            String error = "";
+
+            PrincipalContext context = new PrincipalContext(ContextType.Domain, sv.getIP(), sv.getGenericUsername(), sv.getGenericPassword());
+            UserPrincipal user = UserPrincipal.FindByIdentity(context, username);
+
+            try
+            {
+                user.SetPassword(password);
+            }
+            catch (System.DirectoryServices.AccountManagement.PasswordException pwe)
+            {
+                error = "Password needs special characters. !@#$%^&*";
+            }
+            catch(Exception e)
+            {
+                error = e.ToString();
+            }
+
+            return error;
+        }
     }
 }
