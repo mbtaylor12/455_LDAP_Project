@@ -20,6 +20,7 @@ namespace _455_LDAP_Project
                 {
                     String username = Request.Cookies["userName"].Value;
                     welcomeback.Text = "Welcome Back " + username;
+               
                 }
             
           
